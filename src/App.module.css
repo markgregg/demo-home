@@ -1,0 +1,328 @@
+.frame {
+  height: 100vh;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  position: absolute;
+  left: 100px;
+  color: white;
+  font-weight: bold;
+  text-shadow: darkgrey 6px 6px;
+  font-size: xxx-large;
+}
+
+.container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.desktopImage {
+  width: 1000px;
+  height: 500px;
+  border-radius: 2%;
+}
+
+.reflection { 
+  position:relative; 
+} 
+
+.reflection img { 
+  width: 1000px;
+  height: 400px;
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+  filter: flipv; opacity:0.20; 
+  filter: alpha(opacity='20'); 
+  border-radius: 2%;
+} 
+
+.overlay { 
+  position:absolute; 
+  top:0px; 
+  left:0px; 
+  width:78px; 
+  height:120px; 
+  background-image: -o-linear-gradient( rgba(255,255,255,0) 25%, rgb(255,255,255) 40%); 
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.60, rgb(255,255,255)), color-stop(0.75, rgba(255,255,255,0))); 
+  filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0, EndColorStr=#ffffff); 
+} 
+
+.option1 {
+  height: 100px;
+  width: 160px;
+  position: absolute;
+  top: 160px;
+  left: 360px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid;
+}
+
+.option1:hover {
+  top: 180px;
+  left: 380px;
+  height: 160px;
+  width: 250px;
+  z-index: 1;
+}
+
+.option2 {
+  height: 100px;
+  width: 160px;
+  position: absolute;
+  top: 160px;
+  left: 540px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid;
+}
+
+.option2:hover {
+  top: 180px;
+  left: 430px;
+  height: 160px;
+  width: 250px;
+  z-index: 1;
+}
+
+.option3 {
+  height: 100px;
+  width: 160px;
+  position: absolute;
+  top: 270px;
+  left: 360px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid;
+}
+
+.option3:hover {
+  top: 200px;
+  left: 380px;
+  height: 160px;
+  width: 250px;
+  z-index: 1;
+}
+
+.option4 {
+  height: 100px;
+  width: 160px;
+  position: absolute;
+  top: 270px;
+  left: 540px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid;
+}
+
+.option4:hover {
+  top: 200px;
+  left: 430px;
+  height: 160px;
+  width: 250px;
+  z-index: 1;
+}
+
+.optionTextContainer {
+  position: absolute;
+  top: 350px;
+  left: 360px;
+  width: 350px;
+  overflow: hidden;
+}
+
+.optionText {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-animation: text-animation 15s linear infinite;
+  animation: text-animation 15s linear infinite;
+}
+
+.titleReflection {
+  position: absolute;
+  left: 100px;
+  top: 800px;
+  color: white;
+  font-weight: bold;
+  text-shadow: darkgrey 6px 6px;
+  font-size: xxx-large;
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1,-1 );
+}
+
+.option1Reflection {
+  height: 75px;
+  width: 160px;
+  position: absolute;
+  top: 695px;
+  left: 360px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option1ReflectionHover {
+  top: 630px;
+  left: 380px;
+  position: absolute;
+  height: 130px;
+  width: 250px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  z-index: 1;
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option2Reflection {
+  height: 75px;
+  width: 160px;
+  position: absolute;
+  top: 695px;
+  left: 540px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option2ReflectionHover {
+  top: 630px;
+  left: 430px;
+  position: absolute;
+  height: 130px;
+  width: 250px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  z-index: 1;
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option3Reflection {
+  height: 75px;
+  width: 160px;
+  position: absolute;
+  top: 610px;
+  left: 360px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option3ReflectionHover {
+  top: 620px;
+  left: 380px;
+  position: absolute;
+  height: 130px;
+  width: 250px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  z-index: 1;
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option4Reflection {
+  height: 75px;
+  width: 160px;
+  position: absolute;
+  top: 610px;
+  left: 540px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+.option4ReflectionHover {
+  top: 620px;
+  left: 430px;
+  position: absolute;
+  height: 130px;
+  width: 250px;
+  transition: top 1s, left 1s, height 1s, width 1s;
+  border: lightgray 1px solid; 
+  z-index: 1;
+  -webkit-transform: scaleY(-1); 
+  -ms-transform: scaleY(-1); 
+  -o-transform: scaleY(-1); 
+  transform: scaleY(-1); 
+}
+
+
+.optionTextReflectionContainer {
+  position: absolute;
+  top: 580px;
+  left: 360px;
+  width: 350px;
+  overflow: hidden;
+}
+
+.optionTextReflection {
+  -webkit-transform: translateX(100%) scale(1, -1);
+  -o-transform: translateX(100%) scale(1, -1);
+  -ms-transform: translateX(100%) scale(1, -1);
+  transform: translateX(100%) scale(1,-1 );
+  -webkit-animation: text-animation-reflection  15s linear infinite;
+  animation: text-animation-reflection  15s linear infinite;
+}
+
+@-webkit-keyframes text-animation-reflection {
+  from { -webkit-transform: translateX(100%) scale(1, -1); }
+  to { -webkit-transform: translateX(-100%) scale(1, -1); }
+}
+
+@keyframes text-animation-reflection {
+  from {
+    -webkit-transform: translateX(100%)  scale(1, -1);
+    transform: translateX(100%)  scale(1, -1);
+  }
+  to {
+    -webkit-transform: translateX(-100%)  scale(1, -1);
+    transform: translateX(-100%)  scale(1, -1);
+  }
+}
+
+@-webkit-keyframes text-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes text-animation {
+  from {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
