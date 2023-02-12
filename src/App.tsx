@@ -53,17 +53,16 @@ const App: Component = () => {
     setTimeout(() => {
       switch(opt) {
         case 1:
-          console.log("change page to https://markgregg.github.io/solidjs-select/")
           window.location.href = "https://markgregg.github.io/solidjs-select/"; 
           break;
         case 2:
           window.location.assign("https://markgregg.github.io/ag-grid-universal-filter/"); 
           break;
         case 3:
-          window.location.assign("https://markgregg.github.io/solidjs-select/"); 
+          window.location.assign("https://markgregg.github.io/solidjs-virtualisation/"); 
           break;
         case 4:
-          window.location.assign("https://markgregg.github.io/solidjs-select/"); 
+          window.location.assign("https://markgregg.github.io/solidjs-show-code/"); 
           break;
       }
     }, 900)
