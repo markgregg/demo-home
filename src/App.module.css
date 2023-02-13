@@ -71,9 +71,9 @@
 }
 
 .option1:hover {
-  top: 180px;
-  left: 380px;
-  height: 160px;
+  top: 160px;
+  left: 360px;
+  height: 155px;
   width: 250px;
   z-index: 1;
 }
@@ -89,9 +89,9 @@
 }
 
 .option2:hover {
-  top: 180px;
-  left: 430px;
-  height: 160px;
+  top: 160px;
+  left: 450px;
+  height: 155px;
   width: 250px;
   z-index: 1;
 }
@@ -107,9 +107,9 @@
 }
 
 .option3:hover {
-  top: 200px;
-  left: 380px;
-  height: 160px;
+  top: 215px;
+  left: 360px;
+  height: 155px;
   width: 250px;
   z-index: 1;
 }
@@ -125,16 +125,17 @@
 }
 
 .option4:hover {
-  top: 200px;
-  left: 430px;
-  height: 160px;
+  top: 215px;
+  left: 450px;
+  height: 155px;
   width: 250px;
   z-index: 1;
 }
 
 .optionTextContainer {
+  font-size: small;
   position: absolute;
-  top: 350px;
+  top: 358px;
   left: 360px;
   width: 350px;
   overflow: hidden;
@@ -176,10 +177,10 @@
 }
 
 .option1ReflectionHover {
-  top: 630px;
-  left: 380px;
+  top: 655px;
+  left: 360px;
   position: absolute;
-  height: 130px;
+  height: 125px;
   width: 250px;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid; 
@@ -205,10 +206,10 @@
 }
 
 .option2ReflectionHover {
-  top: 630px;
-  left: 430px;
+  top: 655px;
+  left: 450px;
   position: absolute;
-  height: 130px;
+  height: 125px;
   width: 250px;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid; 
@@ -234,10 +235,10 @@
 }
 
 .option3ReflectionHover {
-  top: 620px;
-  left: 380px;
+  top: 610px;
+  left: 360px;
   position: absolute;
-  height: 130px;
+  height: 125px;
   width: 250px;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid; 
@@ -263,10 +264,10 @@
 }
 
 .option4ReflectionHover {
-  top: 620px;
-  left: 430px;
+  top: 610px;
+  left: 450px;
   position: absolute;
-  height: 130px;
+  height: 125px;
   width: 250px;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid; 
@@ -279,6 +280,7 @@
 
 
 .optionTextReflectionContainer {
+  font-size: small;
   position: absolute;
   top: 580px;
   left: 360px;
