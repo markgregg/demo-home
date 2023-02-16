@@ -54,9 +54,9 @@ const App: Component = () => {
       switch(opt) {
         case 1:
           window.location.href = "https://markgregg.github.io/solidjs-select/"; 
-          break;
+          break; 
         case 2:
-          window.location.assign("https://markgregg.github.io/ag-grid-universal-filter/"); 
+          window.location.assign("https://markgregg.github.io/ag-grid-quick-filter/"); 
           break;
         case 3:
           window.location.assign("https://markgregg.github.io/solidjs-virtualisation/"); 
