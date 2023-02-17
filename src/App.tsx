@@ -31,16 +31,16 @@ const App: Component = () => {
     setOption(opt);
     switch(opt) {
       case 1:
-        setOptionText("SolidJs Select control.");
+        setOptionText("Functionally rich SolidJs Select control.");
         break;
       case 2:
-        setOptionText("Ag-Grid Universal Filter for React.");
+        setOptionText("A powerful quick filter for React and Ag-Grid.");
         break;
       case 3:
-        setOptionText("SolidJs Virtualisation.");
+        setOptionText("A virtualised container with customisable scrollbar.");
         break;
       case 4:
-        setOptionText("SolidJs Code Viewer.");
+        setOptionText("A Code viewer for SolidJs.");
         break;
       default:
         setOptionText("Select one of the above options to view demos.")
