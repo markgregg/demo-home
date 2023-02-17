@@ -1,13 +1,15 @@
 .frame {
   height: 100vh;
-  width: 95vw;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .page {
-  width: 1200px;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,31 +17,75 @@
 
 .title {
   position: absolute;
-  left: 100px;
+  left: 10%;
   color: white;
   font-weight: bold;
   text-shadow: darkgrey 6px 6px;
-  font-size: xxx-large;
+  font-size: x-large;
 }
 
-.container {
-  margin-top: 20px;
+.primary {
   position: relative;
+  width: 100%;
+  height: 50%;
 }
 
 .desktopImage {
-  width: 1000px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   border-radius: 2%;
+}
+
+.screen {
+  position: absolute;
+  left: 35.5%;
+  top: 31.3%;
+  width: 35.7%;
+  height: 46.3%;
+}
+
+.optionTextContainer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  font-size: x-small;
+}
+
+.revolvingText {
+  width: 300px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-animation: text-animation 15s linear infinite;
+  animation: text-animation 15s linear infinite;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.titleReflection {
+  position: absolute;
+  left: 10%;
+  top: 81%;
+  color: white;
+  font-weight: bold;
+  text-shadow: darkgrey 6px 6px;
+  font-size: x-large;
+  z-index: 1;
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1,-1 );
 }
 
 .reflection { 
   position:relative; 
+  width: 100%;
+  height: 50%;
 } 
 
-.reflection img { 
-  width: 1000px;
-  height: 400px;
+.reflectionImage { 
+  width: 100%;
+  height: 100%;
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
@@ -53,123 +99,122 @@
   position:absolute; 
   top:0px; 
   left:0px; 
-  width:78px; 
-  height:120px; 
   background-image: -o-linear-gradient( rgba(255,255,255,0) 25%, rgb(255,255,255) 40%); 
   background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.60, rgb(255,255,255)), color-stop(0.75, rgba(255,255,255,0))); 
   filter: progid:DXImageTransform.Microsoft.Gradient( gradientType=0, startColor=0, EndColorStr=#ffffff); 
 } 
 
-.option1 {
-  height: 100px;
-  width: 160px;
+.screenReflection {
   position: absolute;
-  top: 160px;
-  left: 360px;
+  left: 35.5%;
+  top: 22.7%;
+  width: 35.7%;
+  height: 46.3%;
+}
+
+.optionTextContainerReflection {
+  position: absolute;
+  top: 1%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  font-size: x-small;
+}
+
+.revolvingTextReflection {
+  margin-block-start: 0em;
+    margin-block-end: 0em;
+  -webkit-transform: translateX(100%) scale(1, -1);
+  -o-transform: translateX(100%) scale(1, -1);
+  -ms-transform: translateX(100%) scale(1, -1);
+  transform: translateX(100%) scale(1,-1 );
+  -webkit-animation: text-animation-reflection  15s linear infinite;
+  animation: text-animation-reflection  15s linear infinite;
+}
+
+
+.option1 {
+  height: 20.0%;
+  width: 16.7%;
+  position: absolute;
+  top: 32%;
+  left: 36%;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid;
 }
 
 .option1:hover {
-  top: 160px;
-  left: 360px;
-  height: 155px;
-  width: 250px;
+  height: 32%;
+  width: 28%;
+  position: absolute;
+  top: 32%;
+  left: 36%;
   z-index: 1;
 }
 
 .option2 {
-  height: 100px;
-  width: 160px;
+  height: 20%;
+  width: 16.7%;
   position: absolute;
-  top: 160px;
-  left: 540px;
+  top: 32%;
+  left: 53.8%;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid;
 }
 
 .option2:hover {
-  top: 160px;
-  left: 450px;
-  height: 155px;
-  width: 250px;
+  top: 32%;
+  left: 42.52%;
+  height: 32%;
+  width: 28%;
   z-index: 1;
 }
 
 .option3 {
-  height: 100px;
-  width: 160px;
+  height: 20%;
+  width: 16.7%;
   position: absolute;
-  top: 270px;
-  left: 360px;
+  top: 54%;
+  left: 36%;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid;
 }
 
 .option3:hover {
-  top: 215px;
-  left: 360px;
-  height: 155px;
-  width: 250px;
+  height: 32%;
+  width: 28%;
+  position: absolute;
+  top: 42.4%;
+  left: 36%;
   z-index: 1;
 }
 
 .option4 {
-  height: 100px;
-  width: 160px;
+  height: 20%;
+  width: 16.7%;
   position: absolute;
-  top: 270px;
-  left: 540px;
+  top: 54%;
+  left: 53.8%;
   transition: top 1s, left 1s, height 1s, width 1s;
   border: lightgray 1px solid;
 }
 
 .option4:hover {
-  top: 215px;
-  left: 450px;
-  height: 155px;
-  width: 250px;
+  height: 32%;
+  width: 28%;
+  top: 42.4%;
+  left: 42.52%;
   z-index: 1;
 }
 
-.optionTextContainer {
-  font-size: small;
-  position: absolute;
-  top: 358px;
-  left: 360px;
-  width: 350px;
-  overflow: hidden;
-}
-
-.optionText {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  -webkit-animation: text-animation 15s linear infinite;
-  animation: text-animation 15s linear infinite;
-}
-
-.titleReflection {
-  position: absolute;
-  left: 100px;
-  top: 800px;
-  color: white;
-  font-weight: bold;
-  text-shadow: darkgrey 6px 6px;
-  font-size: xxx-large;
-  -webkit-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
-  transform: scale(1,-1 );
-}
-
 .option1Reflection {
-  height: 75px;
-  width: 160px;
+  height: 20.0%;
+  width: 16.7%;
   position: absolute;
-  top: 695px;
-  left: 360px;
+  top: 47.5%;
+  left: 36%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
@@ -177,13 +222,13 @@
 }
 
 .option1ReflectionHover {
-  top: 655px;
-  left: 360px;
+  height: 32%;
+  width: 28%;
   position: absolute;
-  height: 125px;
-  width: 250px;
+  top: 35.5%;
+  left: 36%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   z-index: 1;
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
@@ -192,13 +237,13 @@
 }
 
 .option2Reflection {
-  height: 75px;
-  width: 160px;
+  height: 20%;
+  width: 16.7%;
   position: absolute;
-  top: 695px;
-  left: 540px;
+  top: 47.5%;
+  left: 53.8%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
@@ -206,13 +251,13 @@
 }
 
 .option2ReflectionHover {
-  top: 655px;
-  left: 450px;
+  height: 32%;
+  width: 28%;
   position: absolute;
-  height: 125px;
-  width: 250px;
+  top: 35.5%;
+  left: 42.52%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   z-index: 1;
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
@@ -221,13 +266,13 @@
 }
 
 .option3Reflection {
-  height: 75px;
-  width: 160px;
+  height: 20.0%;
+  width: 16.7%;
   position: absolute;
-  top: 610px;
-  left: 360px;
+  top: 26%;
+  left: 36%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
@@ -235,13 +280,14 @@
 }
 
 .option3ReflectionHover {
-  top: 610px;
-  left: 360px;
+  height: 32%;
+  width: 28%;
   position: absolute;
-  height: 125px;
-  width: 250px;
+  top: 26%;
+  left: 36%;
+  z-index: 1;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   z-index: 1;
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
@@ -250,13 +296,13 @@
 }
 
 .option4Reflection {
-  height: 75px;
-  width: 160px;
+  height: 20.0%;
+  width: 16.7%;
   position: absolute;
-  top: 610px;
-  left: 540px;
+  top: 26%;
+  left: 53.8%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
@@ -264,37 +310,18 @@
 }
 
 .option4ReflectionHover {
-  top: 610px;
-  left: 450px;
+  top: 26%;
+  left: 42.52%;
   position: absolute;
-  height: 125px;
-  width: 250px;
+  height: 32%;
+  width: 28%;
+  border: lightgray 1px solid;
   transition: top 1s, left 1s, height 1s, width 1s;
-  border: lightgray 1px solid; 
   z-index: 1;
   -webkit-transform: scaleY(-1); 
   -ms-transform: scaleY(-1); 
   -o-transform: scaleY(-1); 
   transform: scaleY(-1); 
-}
-
-
-.optionTextReflectionContainer {
-  font-size: small;
-  position: absolute;
-  top: 580px;
-  left: 360px;
-  width: 350px;
-  overflow: hidden;
-}
-
-.optionTextReflection {
-  -webkit-transform: translateX(100%) scale(1, -1);
-  -o-transform: translateX(100%) scale(1, -1);
-  -ms-transform: translateX(100%) scale(1, -1);
-  transform: translateX(100%) scale(1,-1 );
-  -webkit-animation: text-animation-reflection  15s linear infinite;
-  animation: text-animation-reflection  15s linear infinite;
 }
 
 @-webkit-keyframes text-animation-reflection {

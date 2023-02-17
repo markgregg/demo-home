@@ -1,4 +1,4 @@
-import { Component, createSignal } from 'solid-js';
+import { Component, createSignal, onMount } from 'solid-js';
 
 import desktop from './assets/desktop.jpg';
 import agGrid from './assets/ag-grid.png';
@@ -23,10 +23,32 @@ const demoOptions: DemoOption[] = [
   {index: 4, image: javascript, alt: 'javascript', style: styles.option4, reflStyle: styles.option4Reflection, reflHoverstyle: styles.option4ReflectionHover}
 ]
 const App: Component = () => {
+  let optionTextRef: HTMLParagraphElement | undefined = undefined;
+  let screenRef: HTMLDivElement | undefined = undefined;
+  const [optionTextTop,setOptionTextTop] = createSignal();
+  const [optionTextObserver,setOptionTextObserver] = createSignal<ResizeObserver>();
+  const [screenRefObserver,setScreenRefObserver] = createSignal<ResizeObserver>();
   const [optionText,setOptionText] = createSignal("");
   const [option,setOption] = createSignal(0);
   const [showOption,setShowOption] = createSignal(0);
-  
+
+  onMount(() => {
+    if( screenRef && optionTextRef ) {
+      const adjustSize = () => {
+        if( screenRef && optionTextRef )  {
+          setOptionTextTop(screenRef.clientHeight - optionTextRef.clientHeight);
+        }
+      };
+      setOptionTextObserver(new ResizeObserver(adjustSize));
+      setScreenRefObserver(new ResizeObserver(adjustSize));
+      optionTextObserver()?.observe(optionTextRef);
+      screenRefObserver()?.observe(screenRef);
+
+      adjustSize();
+    }
+    setOption(0);
+  });
+
   const selectOption = (opt: number) => {
     setOption(opt);
     switch(opt) {
@@ -71,19 +93,30 @@ const App: Component = () => {
   return (
     <div class={styles.frame}>
       <div class={styles.page}>
-        <div class={styles.container}>
+        
+        <div class={styles.primary}>
           <h1 class={styles.title}>Mark's Demo Page</h1>
           <img 
             class={styles.desktopImage}
             src={desktop}
             alt="main"
+            object-fit="contain"
           />
-          <div class={styles.reflection}>
-            <img 
-              src={desktop}
-              alt="main-reflection"
-            />
-            <div class={styles.overlay}/>
+          <div 
+            ref={screenRef}
+            class={styles.screen}
+          >
+            <div 
+              class={styles.optionTextContainer}
+              style={{
+                top: optionTextTop() ? `${optionTextTop()}px` : '92%'
+              }}
+            >
+              <p 
+                class={styles.revolvingText}
+                ref={optionTextRef}
+              >{optionText()}</p>
+            </div>
           </div>
           {
             demoOptions.map( option => 
@@ -97,32 +130,40 @@ const App: Component = () => {
                 style={
                   showOption() === option.index ? {
                     width: '100%',
-                    height: '100%',
+                    height: '200%',
                     top: '0px',
                     left: '0px',
                     "z-index": 99
                   } : {}
                 }
-              />
-            )
-          }
-          <div class={styles.optionTextContainer}>
-            <p class={styles.optionText}>{optionText()}</p>
-          </div>
+              />) 
+            }
+        </div>
+
+
+
+        <div class={styles.reflection}>
           <h1 class={styles.titleReflection}>Mark's Demo Page</h1>
-          {
-            demoOptions.map( refloption => 
-              <img 
-                class={option() === refloption.index ? refloption.reflHoverstyle : refloption.reflStyle}
-                src={refloption.image}
-                alt={refloption.alt}
-              />
-            )
-          }
-          <div class={styles.optionTextReflectionContainer}>
-            <p class={styles.optionTextReflection}>{optionText()}</p>
+          <img class={styles.reflectionImage}
+            src={desktop}
+            alt="main-reflection"
+          />
+
+          <div class={styles.screenReflection}>
+            <div class={styles.optionTextContainerReflection}>
+              <p class={styles.revolvingTextReflection}>{optionText()}</p>
+            </div>
           </div>
-          
+          <div class={styles.overlay}/>
+            {
+              demoOptions.map( refloption => 
+                <img 
+                  class={option() === refloption.index ? refloption.reflHoverstyle : refloption.reflStyle}
+                  src={refloption.image}
+                  alt={refloption.alt}
+                />
+              )
+            }
         </div>
       </div>
       
