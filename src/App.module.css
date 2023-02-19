@@ -56,8 +56,8 @@
   width: 300px;
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-animation: text-animation 15s linear infinite;
-  animation: text-animation 15s linear infinite;
+  -webkit-animation: text-animation 12s linear infinite;
+  animation: text-animation 12s linear infinite;
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
@@ -129,8 +129,8 @@
   -o-transform: translateX(100%) scale(1, -1);
   -ms-transform: translateX(100%) scale(1, -1);
   transform: translateX(100%) scale(1,-1 );
-  -webkit-animation: text-animation-reflection  15s linear infinite;
-  animation: text-animation-reflection  15s linear infinite;
+  -webkit-animation: text-animation-reflection  12s linear infinite;
+  animation: text-animation-reflection  12s linear infinite;
 }
 
 

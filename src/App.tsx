@@ -5,11 +5,15 @@ import agGrid from './assets/ag-grid.png';
 import select from './assets/select.png';
 import table from './assets/table.png';
 import javascript from './assets/javascript.png';
+import agGridMobile from './assets/ag-grid - mobile.png';
+import selectMobile from './assets/select - mobile.png';
+import tableMobile from './assets/table - mobile.png';
+import javascriptMobile from './assets/javascript - mobile.png';
 import styles from './App.module.css';
-
 interface DemoOption {
   index: number;
   image: string;
+  mobileImage: string;
   alt: string;
   style: string;
   reflStyle: string;
@@ -17,10 +21,10 @@ interface DemoOption {
 }
 
 const demoOptions: DemoOption[] = [
-  {index: 1, image: select, alt: 'select', style: styles.option1, reflStyle: styles.option1Reflection, reflHoverstyle: styles.option1ReflectionHover},
-  {index: 2, image: agGrid, alt: 'agGrid', style: styles.option2, reflStyle: styles.option2Reflection, reflHoverstyle: styles.option2ReflectionHover},
-  {index: 3, image: table, alt: 'table', style: styles.option3, reflStyle: styles.option3Reflection, reflHoverstyle: styles.option3ReflectionHover},
-  {index: 4, image: javascript, alt: 'javascript', style: styles.option4, reflStyle: styles.option4Reflection, reflHoverstyle: styles.option4ReflectionHover}
+  {index: 1, image: select, mobileImage: selectMobile, alt: 'select', style: styles.option1, reflStyle: styles.option1Reflection, reflHoverstyle: styles.option1ReflectionHover},
+  {index: 2, image: agGrid, mobileImage: agGridMobile, alt: 'agGrid', style: styles.option2, reflStyle: styles.option2Reflection, reflHoverstyle: styles.option2ReflectionHover},
+  {index: 3, image: table, mobileImage: tableMobile, alt: 'table', style: styles.option3, reflStyle: styles.option3Reflection, reflHoverstyle: styles.option3ReflectionHover},
+  {index: 4, image: javascript, mobileImage: javascriptMobile, alt: 'javascript', style: styles.option4, reflStyle: styles.option4Reflection, reflHoverstyle: styles.option4ReflectionHover}
 ]
 const App: Component = () => {
   let optionTextRef: HTMLParagraphElement | undefined = undefined;
@@ -90,6 +94,10 @@ const App: Component = () => {
     }, 900)
   }
 
+  const isMobile = (): boolean => {
+    return window.matchMedia("only screen and (max-width: 600px)").matches;
+  }
+
   return (
     <div class={styles.frame}>
       <div class={styles.page}>
@@ -122,7 +130,7 @@ const App: Component = () => {
             demoOptions.map( option => 
               <img 
                 class={option.style}
-                src={option.image}
+                src={isMobile() ? option.mobileImage : option.image}
                 alt={option.alt}
                 onClick={() => nagivateToOption(option.index)}
                 onMouseEnter={() => selectOption(option.index)}
@@ -159,7 +167,7 @@ const App: Component = () => {
               demoOptions.map( refloption => 
                 <img 
                   class={option() === refloption.index ? refloption.reflHoverstyle : refloption.reflStyle}
-                  src={refloption.image}
+                  src={isMobile() ? refloption.mobileImage : refloption.image}
                   alt={refloption.alt}
                 />
               )
